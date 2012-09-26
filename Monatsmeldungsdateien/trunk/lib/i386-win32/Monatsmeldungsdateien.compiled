@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<CONFIG>
-  <Compiler Value="C:\lazarus\fpc\2.6.1\bin\i386-win32\fpc.exe" Date="1093282765"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -vewnhi -FiC:\PROJEKTE\Lazarus\Monatsmeldungsdateien\lib\i386-win32 -FuC:\PROJEKTE\Lazarus\comp -FuC:\lazarus\components\lazcontrols\lib\i386-win32\win32 -FuC:\PROJEKTE\Lazarus\comp\lib\i386-win32 -FuC:\lazarus\lcl\units\i386-win32\win32 -FuC:\lazarus\lcl\units\i386-win32 -FuC:\lazarus\components\lazutils\lib\i386-win32 -FuC:\lazarus\packager\units\i386-win32 -FuC:\PROJEKTE\Lazarus\Monatsmeldungsdateien\ -FUC:\PROJEKTE\Lazarus\Monatsmeldungsdateien\lib\i386-win32\ -l -dLCL -dLCLwin32 Monatsmeldungsdateien.lpr"/>
-</CONFIG>
