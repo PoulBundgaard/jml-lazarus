@@ -18,7 +18,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
-      <BuildNr Value="177"/>
+      <BuildNr Value="178"/>
       <Language Value="0407"/>
       <StringTable CompanyName="Hessische Landesbahnn GmbH" ProductVersion="1.0" FileDescription="Startzentrale für Anwendungen Einnahmemeldungen"/>
     </VersionInfo>
