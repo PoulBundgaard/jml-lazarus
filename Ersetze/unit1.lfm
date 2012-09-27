@@ -1,0 +1,332 @@
+object Form1: TForm1
+  Left = 349
+  Height = 419
+  Top = 181
+  Width = 830
+  Caption = 'Suchen und ersetzen in Textdatei'
+  ClientHeight = 419
+  ClientWidth = 830
+  Font.Height = -11
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnShow = FormShow
+  SessionProperties = 'EditDelimiter.Text;EditReplace.Text;EditSearch.Text;FileNameEdit1.FileName;SpinEditColumn.Value;cbFeldNamen.Checked'
+  ShowHint = True
+  LCLVersion = '1.1'
+  object Panel1: TPanel
+    Left = 0
+    Height = 72
+    Top = 0
+    Width = 830
+    Align = alTop
+    ClientHeight = 72
+    ClientWidth = 830
+    TabOrder = 0
+    object Label3: TLabel
+      Left = 1
+      Height = 14
+      Top = 1
+      Width = 828
+      Align = alTop
+      Caption = 'Datei öffnen,dann in Zelle klicken in der gesucht und ersetzt werden soll und dann ''ausführen''. Siehe auch Rechtsklick in Tabelle!'
+      Color = clWhite
+      Font.Color = clBlue
+      Font.Height = -11
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Panel3: TPanel
+      Left = 1
+      Height = 56
+      Top = 15
+      Width = 129
+      Align = alLeft
+      ClientHeight = 56
+      ClientWidth = 129
+      TabOrder = 0
+      object EditDelimiter: TEdit
+        Left = 1
+        Height = 21
+        Hint = '|Trennzeichen in der zu öffnenden Datei'
+        Top = 21
+        Width = 120
+        Alignment = taCenter
+        Color = 8454143
+        MaxLength = 1
+        TabOrder = 0
+        Text = ';'
+      end
+      object Label2: TLabel
+        Left = 1
+        Height = 14
+        Top = 5
+        Width = 127
+        Caption = 'Trennzeichen in der Datei:'
+        ParentColor = False
+      end
+    end
+    object Panel4: TPanel
+      Left = 130
+      Height = 56
+      Top = 15
+      Width = 158
+      Align = alLeft
+      ClientHeight = 56
+      ClientWidth = 158
+      TabOrder = 1
+      object cbFeldNamen: TCheckBox
+        Left = 8
+        Height = 17
+        Hint = '|erste Zeile der Datei enthält die Spaltennamen'
+        Top = 21
+        Width = 140
+        Caption = 'Feldnamen in erster Zeile'
+        Color = clDefault
+        ParentColor = False
+        TabOrder = 0
+      end
+    end
+    object Panel5: TPanel
+      Left = 288
+      Height = 56
+      Top = 15
+      Width = 541
+      Align = alClient
+      ClientHeight = 56
+      ClientWidth = 541
+      TabOrder = 2
+      object FileNameEdit1: TFileNameEdit
+        Left = 8
+        Height = 21
+        Top = 21
+        Width = 490
+        OnAcceptFileName = FileNameEdit1AcceptFileName
+        DialogOptions = []
+        Filter = 'csv (*.csv)|*.csv|Text (*.txt)|*.txt|Alle Dateien (*.*)|*.*'
+        FilterIndex = 0
+        HideDirectories = False
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object Label1: TLabel
+        Left = 8
+        Height = 14
+        Top = 5
+        Width = 240
+        Caption = 'In welcher Datei soll gesucht und ersetzt werden?'
+        ParentColor = False
+      end
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 50
+    Top = 349
+    Width = 830
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 830
+    TabOrder = 1
+    object DBNavigator1: TDBNavigator
+      Left = 424
+      Height = 25
+      Top = 18
+      Width = 241
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 241
+      DataSource = Datasource1
+      Options = []
+      TabOrder = 0
+    end
+    object EditSearch: TEdit
+      Left = 8
+      Height = 21
+      Hint = '|wonach soll gesucht werden?'
+      Top = 22
+      Width = 134
+      Alignment = taCenter
+      Color = 8454143
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      Text = '.'
+    end
+    object EditReplace: TEdit
+      Left = 169
+      Height = 21
+      Hint = 'wdorch soll ersetzt werden?'
+      Top = 22
+      Width = 134
+      Alignment = taCenter
+      Color = 8454143
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      Text = ','
+    end
+    object Label4: TLabel
+      Left = 8
+      Height = 14
+      Top = 4
+      Width = 59
+      Caption = 'suche nach:'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 168
+      Height = 14
+      Top = 4
+      Width = 75
+      Caption = 'ersetzte durch:'
+      ParentColor = False
+    end
+    object BtnExecute: TButton
+      Left = 309
+      Height = 25
+      Hint = '|Ersetzungen für die aktuelle Spalte ausführen'
+      Top = 18
+      Width = 112
+      Caption = 'ersetzen &ausführen'
+      Enabled = False
+      OnClick = BtnExecuteClick
+      TabOrder = 3
+    end
+    object lbRecordCount: TLabel
+      Left = 825
+      Height = 16
+      Top = 1
+      Width = 4
+      Align = alRight
+      Caption = ' '
+      Color = clRed
+      Constraints.MaxHeight = 16
+      Font.Color = clWhite
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Visible = False
+    end
+    object BtnSaveAs: TButton
+      Left = 680
+      Height = 25
+      Hint = '|speichert die Daten in eine Datei'
+      Top = 16
+      Width = 136
+      Caption = 'Daten speichern unter ...'
+      OnClick = BtnSaveAsClick
+      TabOrder = 4
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 265
+    Hint = '|siehe auch die Befehle über Rechtsklick in der Tabelle'
+    Top = 72
+    Width = 830
+    Align = alClient
+    AlternateColor = clInfoBk
+    Color = clWindow
+    Columns = <>
+    DataSource = Datasource1
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgHeaderPushedLook, dgAutoSizeColumns]
+    PopupMenu = PopupDBGrid
+    TabOrder = 2
+    TitleFont.Height = -11
+    OnCellClick = DBGrid1CellClick
+    OnColEnter = DBGrid1ColEnter
+    OnTitleClick = DBGrid1TitleClick
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 20
+    Top = 399
+    Width = 830
+    AutoHint = True
+    Panels = <>
+  end
+  object ProgressBar1: TProgressBar
+    Left = 0
+    Height = 12
+    Top = 337
+    Width = 830
+    Align = alBottom
+    Step = 1
+    TabOrder = 4
+  end
+  object SdfDataSet1: TSdfDataSet
+    FileMustExist = True
+    ReadOnly = False
+    FieldDefs = <>
+    AfterInsert = SdfDataSet1UpdateInfo
+    AfterPost = SdfDataSet1AfterPost
+    AfterDelete = SdfDataSet1UpdateInfo
+    OnFilterRecord = SdfDataSet1FilterRecord
+    AllowMultiLine = False
+    Delimiter = ','
+    FirstLineAsSchema = False
+    left = 490
+    top = 176
+  end
+  object Datasource1: TDatasource
+    DataSet = SdfDataSet1
+    left = 408
+    top = 176
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    OnRestoreProperties = IniPropStorage1RestoreProperties
+    left = 581
+    top = 176
+  end
+  object SaveDialog1: TSaveDialog
+    Options = [ofPathMustExist, ofEnableSizing, ofViewDetail]
+    left = 316
+    top = 176
+  end
+  object PopupDBGrid: TPopupMenu
+    OnPopup = PopupDBGridPopup
+    left = 224
+    top = 176
+    object MenuItem1: TMenuItem
+      Caption = 'Auswahlfilter setzen'
+      ShortCut = 16454
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Filter aufheben'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Summe in aktueller Spalte'
+      Enabled = False
+      ShortCut = 16467
+      OnClick = MenuItem3Click
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Anzahl Datensätze'
+      ShortCut = 16462
+      OnClick = MenuItem4Click
+    end
+    object MenuItem5: TMenuItem
+      Caption = 'suche in aktueller Spalte'
+      Hint = '|sucht einen Wert in der aktuellen Spalte ab aktueller Zeile'
+      ShortCut = 16450
+      OnClick = MenuItem5Click
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'angezeigte Daten kopieren'
+      ShortCut = 49219
+      OnClick = MenuItem6Click
+    end
+  end
+end
