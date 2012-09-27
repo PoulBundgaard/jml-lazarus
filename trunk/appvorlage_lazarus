@@ -1,0 +1,8 @@
+[Variables]
+[Project]
+ProjectFile=project1
+Name=NewProject
+Author=John Landmesser
+Description=Eigenes Lazarus Vorlagenprojekt
+Recurse=0
+Exclude=
