@@ -1,0 +1,41 @@
+object Form1: TForm1
+  Left = 462
+  Height = 253
+  Hint = '|Das ist das'
+  Top = 188
+  Width = 431
+  Caption = 'Form1'
+  ClientHeight = 253
+  ClientWidth = 431
+  OnCreate = FormCreate
+  LCLVersion = '0.9.29'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 20
+    Top = 233
+    Width = 431
+    Panels = <>
+  end
+  object Button1: TButton
+    Left = 152
+    Height = 25
+    Hint = 'klick me'
+    Top = 80
+    Width = 75
+    Caption = 'Button1'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+  end
+  object XMLPropStorage1: TXMLPropStorage
+    StoredValues = <>
+    left = 288
+    top = 64
+  end
+  object ApplicationProperties1: TApplicationProperties
+    HintColor = 14870270
+    OnHint = ApplicationProperties1Hint
+    left = 288
+    top = 136
+  end
+end
